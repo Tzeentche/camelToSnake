@@ -3,6 +3,7 @@ package edu.epam.stringArray.task1;
 //      Дан массив названий переменных в camelCase. Преобразовать названия в snake_case.
 
 import java.util.*;
+import java.util.regex.*;
 
 public class CamelToSnake {
 
@@ -18,7 +19,7 @@ public class CamelToSnake {
         giveMeSnakeCase.inputString();
     }
 
-    public String inputString() {
+    public void inputString() {
 
         Scanner inputString = new Scanner(System.in);
 
@@ -43,10 +44,9 @@ public class CamelToSnake {
 
         arrayConverter(fewWords);
 
-        return "";
     }
 
-    public String arrayConverter(String inputString) {
+    public void arrayConverter(String inputString) {
 
         arraySize = fewWords.length();
         array = new String[arraySize];
@@ -58,8 +58,24 @@ public class CamelToSnake {
             System.out.println(charsArray[counter]);
         }
 
+
+        System.out.println("Array size is: " + arraySize);
+
+        Pattern pattern = Pattern.compile("[A-Z]+");
+        Matcher match = pattern.matcher(fewWords);
+
+        for(int count = 0; count < arraySize; count++) {
+
+            if (match.find()) {
+
+                arraySize += 1;
+            }
+        }
+
+        System.out.println("Now ArraySize is: " + arraySize);
+
         camelToSnake(charsArray);
-        return "";
+
     }
 
     public String camelToSnake(String[] mutantString) {
@@ -67,10 +83,10 @@ public class CamelToSnake {
         arraySize = 1 + fewWords.length();
         for(int counter = 0; counter < arraySize; counter++) {
 
-            if(1 == 1) {
+//            if(munantString[counter] >= 1) {
 
                 
-            }
+//            }
         }
         return "";
     }
