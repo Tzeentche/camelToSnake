@@ -43,30 +43,40 @@ public class CamelToSnake {
 
         System.out.println("RakaMakaFo!!!! " + camelCaseWord);
 
-        wordConverter(camelCaseWord);
+        wordDivider(camelCaseWord);
 
     }
 
-    private void wordConverter(String initialString) {
+    public void wordDivider(String initialString) {
+
+//        User's string divide to char's array:
 
         arraySize = initialString.length();
-        array = new String[arraySize];
 
         String[] charsArray = initialString.split("");
+
+        camelToSnakeConverter(charsArray);
+    }
+
+    private void camelToSnakeConverter(String[] snakeResult) {
+
+//        User's string divide to char's array:
+
+        arraySize = snakeResult.length();
 
         for(int counter = 0; counter < arraySize; counter++) {
 
             Pattern pattern = Pattern.compile("[A-Z]");
-            Matcher match = pattern.matcher(charsArray[counter]);
+            Matcher match = pattern.matcher(snakeResult[counter]);
 
             if (match.find()) {
 
-                String lowerCase = charsArray[counter].toLowerCase();
+                String lowerCase = snakeResult[counter].toLowerCase();
                 result += " ".concat(lowerCase);
 
             } else {
 
-                result += charsArray[counter];
+                result += snakeResult[counter];
             }
         }
 
@@ -78,6 +88,8 @@ public class CamelToSnake {
     }
 
     private void outputResult(String resultWord) {
+
+//        Output results:
 
         System.out.println("Now word is: " + resultWord);
         }
