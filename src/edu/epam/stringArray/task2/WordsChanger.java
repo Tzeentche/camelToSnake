@@ -27,6 +27,6 @@ public class WordsChanger {
 
     private void outputString() {
 
-        
+
     }
 }
