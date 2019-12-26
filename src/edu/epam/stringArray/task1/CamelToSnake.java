@@ -60,9 +60,9 @@ public class CamelToSnake {
 
     private void camelToSnakeConverter(String[] snakeResult) {
 
-//        User's string divide to char's array:
+//        Divided array concatenated to result string:
 
-        arraySize = snakeResult.length();
+        arraySize = snakeResult.length;
 
         for(int counter = 0; counter < arraySize; counter++) {
 
