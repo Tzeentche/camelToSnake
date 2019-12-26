@@ -11,7 +11,7 @@ public class CamelToSnake {
 
     static String[] array;
     static int arraySize = 0;
-    public static String fewWords;
+    String result = "";
 
     public static void main(String[] args) {
 
@@ -19,8 +19,9 @@ public class CamelToSnake {
         giveMeSnakeCase.inputString();
     }
 
-    public void inputString() {
+    private void inputString() {
 
+        String camelCaseWord = "";
         Scanner inputString = new Scanner(System.in);
 
         try {
@@ -28,7 +29,7 @@ public class CamelToSnake {
 //      Input the origin String:
 
             System.out.println("Please, enter a some string, consists with few words:");
-            fewWords = inputString.nextLine();
+            camelCaseWord = inputString.nextLine();
             inputString.close();
 
         } catch (InputMismatchException e1) {
@@ -40,64 +41,44 @@ public class CamelToSnake {
             System.out.println("The size of the array out of bounds.");
         }
 
-        System.out.println("RakaMakaFo!!!! " + fewWords);
+        System.out.println("RakaMakaFo!!!! " + camelCaseWord);
 
-        arrayConverter(fewWords);
+        wordConverter(camelCaseWord);
 
     }
 
-    public void arrayConverter(String inputString) {
+    private void wordConverter(String initialString) {
 
-        arraySize = fewWords.length();
+        arraySize = initialString.length();
         array = new String[arraySize];
-        String[] charsArray = inputString.split("");
 
-        System.out.println("Our array is: ");
+        String[] charsArray = initialString.split("");
+
         for(int counter = 0; counter < arraySize; counter++) {
 
-            System.out.println(charsArray[counter]);
-        }
-
-
-        System.out.println("Array size is: " + arraySize);
-
-        Pattern pattern = Pattern.compile("[A-Z]+");
-        Matcher match = pattern.matcher(fewWords);
-
-        for(int count = 0; count < arraySize; count++) {
+            Pattern pattern = Pattern.compile("[A-Z]");
+            Matcher match = pattern.matcher(charsArray[counter]);
 
             if (match.find()) {
 
-                arraySize += 1;
+                String lowerCase = charsArray[counter].toLowerCase();
+                result += " ".concat(lowerCase);
+
+            } else {
+
+                result += charsArray[counter];
             }
         }
 
-        System.out.println("Now ArraySize is: " + arraySize);
+        result = result.trim();
+        result = result.replaceAll(" ", "_");
 
-        camelToSnake(charsArray);
+        outputResult(result);
 
     }
 
-    public String camelToSnake(String[] mutantString) {
+    private void outputResult(String resultWord) {
 
-        arraySize = 1 + fewWords.length();
-        for(int counter = 0; counter < arraySize; counter++) {
-
-//            if(munantString[counter] >= 1) {
-
-                
-//            }
+        System.out.println("Now word is: " + resultWord);
         }
-        return "";
-    }
-
-    String outputResult()
-    {
-
-        return "";
-
-    }
-
-
-
 }
