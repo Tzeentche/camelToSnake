@@ -75,7 +75,7 @@ public class NumbersFinder {
     private void counterOutputter(int result) {
 
 //        Output result:
-        
+
         System.out.println("Result of counting is: " + result);
     }
 }
