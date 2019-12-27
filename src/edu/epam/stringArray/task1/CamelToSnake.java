@@ -9,7 +9,6 @@ public class CamelToSnake {
 
 //      Declare using values:
 
-    static String[] array;
     static int arraySize = 0;
     String result = "";
 
@@ -50,8 +49,6 @@ public class CamelToSnake {
     public void wordDivider(String initialString) {
 
 //        User's string divide to char's array:
-
-        arraySize = initialString.length();
 
         String[] charsArray = initialString.split("");
 
