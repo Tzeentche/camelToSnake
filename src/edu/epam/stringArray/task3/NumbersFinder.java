@@ -9,16 +9,24 @@ public class NumbersFinder {
 
     public static void main(String[] args) {
 
+//        Created class example and call method's chain:
+
         NumbersFinder simpleCounter = new NumbersFinder();
         simpleCounter.messageReceiver();
     }
 
     private void messageReceiver() {
 
+//        Declare local variables:
+
         String incomingMessage = "";
         Scanner usersMessage = new Scanner(System.in);
 
+//        Get user's input:
+
         System.out.println("Please, enter your message (include numbers): ");
+
+//        Catch exceptions:
 
         try {
             incomingMessage = usersMessage.nextLine();
@@ -34,6 +42,8 @@ public class NumbersFinder {
 
     private void messageSplitter(String incomingMessage) {
 
+//        Split user's message:
+
         String[] resultArray = incomingMessage.split("");
 
         numbersCounter(resultArray);
@@ -41,8 +51,12 @@ public class NumbersFinder {
 
     private void numbersCounter(String[] messageWithNumbers) {
 
+//        Declare local variables:
+
         int valueOfNumbers = 0;
         int arraySize = messageWithNumbers.length;
+
+//        Find count of numbers in User"s message:
 
         for(int counter = 0; counter < arraySize; counter++) {
 
@@ -60,6 +74,8 @@ public class NumbersFinder {
 
     private void counterOutputter(int result) {
 
+//        Output result:
+        
         System.out.println("Result of counting is: " + result);
     }
 }
