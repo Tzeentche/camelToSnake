@@ -9,17 +9,20 @@ public class SpaceKiller {
 
     public static void main(String[] args) {
 
+//        Initialize class object:
         SpaceKiller spaceKiller = new SpaceKiller();
         spaceKiller.inputExpression();
     }
 
     private void inputExpression() {
 
+//        Declare local variables:
         String usersExpression = "";
         Scanner userInput = new Scanner(System.in);
 
         System.out.println("Please, enter your SPACEFULL expression: ");
 
+//        Check user's input:
         try {
 
             usersExpression = userInput.nextLine();
@@ -35,6 +38,7 @@ public class SpaceKiller {
 
     private void killerSpaces(String someExpression) {
 
+//        Find and replace few spaces in row:
         String cleanExpression = someExpression.replaceAll("( )+", " ");
 
         outputResult(cleanExpression.trim());
@@ -42,6 +46,7 @@ public class SpaceKiller {
 
     private void outputResult(String result) {
 
+//        Output result:
         System.out.println("Result is:" + result);
     }
 }
