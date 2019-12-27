@@ -54,7 +54,7 @@ public class WordsChanger {
     }
 
 //    Output result message:
-    
+
     private void outputter (String outputMessage) {
 
         System.out.println("Now our message is: " + outputMessage);
