@@ -2,7 +2,7 @@ package edu.epam.stringLikeStringBuilder.task2;
 
 //      В строке вставить после каждого символа 'а' символ 'b'
 
-//      A see a line of cars and they are all painted black
+//      Our sentence is: [ A see a line of cArs and they are all painted blackA a ]
 
 import java.util.*;
 import java.util.regex.*;
@@ -36,34 +36,22 @@ public class AddCharB {
 
     private void expressionConverter(String expressionToConvert) {
 
-        String[] charsArray = expressionToConvert.split("");
-        int[] charsPosition = new int[charsArray.length];
+        String result = "";
+        Pattern pattern = Pattern.compile("[Aa]");
+        Matcher match = pattern.matcher(expressionToConvert);
 
-        System.out.println("Chars length is: " + charsArray.length);
+        while(match.find()) {
 
-        for (int counter = 0; counter < charsArray.length; counter++) {
-
-            if(charsArray[counter] == "a") {
-
-                charsPosition[counter] = counter;
-            }
+            result = expressionToConvert.replaceAll("[a]", "ab");
+            result = result.replaceAll("[A]", "AB");
         }
 
-        System.out.print("Char \"A\" we find at the next positions: ");
-
-        for (int counter = 0; counter < charsPosition.length; counter++) {
-
-            System.out.print(charsPosition[counter] + ", ");
-        }
-
-        System.out.println("");
-    }
-
-    private void addedToB() {
+        resultOutput(result);
 
     }
 
-    private void resultOutput() {
+    private void resultOutput(String resultExpression) {
 
+        System.out.println("Our result is: " + resultExpression);
     }
 }
