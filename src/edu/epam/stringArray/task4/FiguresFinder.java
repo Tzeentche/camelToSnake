@@ -20,8 +20,8 @@ public class FiguresFinder {
 
 //        Declare local variables:
 
-        Scanner usersSentence = new Scanner(System.in);
         String sentenceHolder = "";
+        Scanner usersSentence = new Scanner(System.in);
 
 //        (I recommend to use next one sentence: "1.1Words5 w0rds 13! 1 -0 0.2  3\,4"):
 

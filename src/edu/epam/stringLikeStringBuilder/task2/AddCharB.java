@@ -11,16 +11,23 @@ public class AddCharB {
 
     public static void main(String[] args) {
 
+//        Create class example
+
         AddCharB makeExpressionGreatAgain = new AddCharB();
         makeExpressionGreatAgain.expressionReceiver();
     }
 
     private void expressionReceiver() {
 
+//        Declare local variables:
+
         String usersSentence = "";
         Scanner insertData = new Scanner(System.in);
 
         System.out.println("Please, enter your sentence with many chars 'a': ");
+
+//        Catch possible exceptions:
+
         try {
 
             usersSentence = insertData.nextLine();
@@ -36,9 +43,13 @@ public class AddCharB {
 
     private void expressionConverter(String expressionToConvert) {
 
+//        Declare local variables:
+
         String result = "";
         Pattern pattern = Pattern.compile("[Aa]");
         Matcher match = pattern.matcher(expressionToConvert);
+
+//        Find RegExp matches:
 
         while(match.find()) {
 
@@ -50,6 +61,8 @@ public class AddCharB {
 
     }
 
+//    Output results:
+    
     private void resultOutput(String resultExpression) {
 
         System.out.println("Our result is: " + resultExpression);
