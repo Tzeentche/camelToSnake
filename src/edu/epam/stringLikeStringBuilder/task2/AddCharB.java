@@ -62,7 +62,7 @@ public class AddCharB {
     }
 
 //    Output results:
-    
+
     private void resultOutput(String resultExpression) {
 
         System.out.println("Our result is: " + resultExpression);
