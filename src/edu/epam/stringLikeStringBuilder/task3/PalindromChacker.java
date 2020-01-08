@@ -52,7 +52,7 @@ public class PalindromChacker {
     private void outputResult(boolean innerResult) {
 
 //        Output result:
-        
+
         if (innerResult) {
 
             System.out.println("Your word is pa-pa-pa-PALINDROM!");
