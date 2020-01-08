@@ -8,16 +8,22 @@ public class PalindromChacker {
 
     public static void main(String[] args) {
 
+//        Create class sample:
+
         PalindromChacker palindromChacker = new PalindromChacker();
         palindromChacker.wordReceiver();
     }
 
     private void wordReceiver() {
 
+//        Declare local variables:
+
         String expression = "";
         Scanner scan = new Scanner(System.in);
 
         System.out.println("Please, enter your sentence: ");
+
+//        Inter user's sentence:
 
         try {
 
@@ -34,6 +40,8 @@ public class PalindromChacker {
 
     private void wordChecker(String innerExpression) {
 
+//        Check user's sentence:
+
         StringBuffer buffer = new StringBuffer(innerExpression);
         buffer.reverse();
         boolean resultIs = innerExpression.contentEquals(buffer);
@@ -43,6 +51,8 @@ public class PalindromChacker {
 
     private void outputResult(boolean innerResult) {
 
+//        Output result:
+        
         if (innerResult) {
 
             System.out.println("Your word is pa-pa-pa-PALINDROM!");
