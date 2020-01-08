@@ -2,8 +2,6 @@ package edu.epam.stringLikeStringBuilder.task3;
 
 //      Проверить, является ли заданное слово палиндромом
 
-import org.w3c.dom.ls.LSOutput;
-
 import java.util.*;
 
 public class PalindromChacker {
@@ -18,6 +16,8 @@ public class PalindromChacker {
 
         String expression = "";
         Scanner scan = new Scanner(System.in);
+
+        System.out.println("Please, enter your sentence: ");
 
         try {
 
@@ -36,14 +36,20 @@ public class PalindromChacker {
 
         StringBuffer buffer = new StringBuffer(innerExpression);
         buffer.reverse();
-        boolean resultIs = innerExpression.equals(buffer);
+        boolean resultIs = innerExpression.contentEquals(buffer);
 
         outputResult(resultIs);
     }
 
     private void outputResult(boolean innerResult) {
 
-        innerResult == true ? System.out.println() : System.out.println();
+        if (innerResult) {
+
+            System.out.println("Your word is pa-pa-pa-PALINDROM!");
+
+        } else {
+
+            System.out.println("It's not PALINDROM :(");
         }
     }
 }
