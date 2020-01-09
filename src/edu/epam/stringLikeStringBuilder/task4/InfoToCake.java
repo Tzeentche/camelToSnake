@@ -4,16 +4,22 @@ package edu.epam.stringLikeStringBuilder.task4;
 
 public class InfoToCake {
 
+//      Declare global variables:
+
     StringBuffer source = new StringBuffer("информатика");
     char[] firstPart = new char[source.length()];
 
     public static void main(String[] args) {
+
+//        Create class example:
 
         InfoToCake infoToCake = new InfoToCake();
         infoToCake.copyFunc();
     }
 
     private void copyFunc() {
+
+//        Copy chars:
 
             firstPart[0] = source.charAt(3);
             firstPart[1] = source.charAt(4);
@@ -24,12 +30,16 @@ public class InfoToCake {
 
     private void concatOper() {
 
+//        Concatenate sentence to task's expression:
+
         String resultIs = ("" + firstPart[2] + firstPart[0] + firstPart[1] + firstPart[2]);
 
         cakeOutput(resultIs);
     }
 
     private void cakeOutput(String sentence) {
+
+//        Output result:
 
         System.out.println("Result is: " + sentence);
     }
