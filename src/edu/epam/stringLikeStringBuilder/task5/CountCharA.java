@@ -74,7 +74,7 @@ public class CountCharA {
     private void resultOutput(int result) {
 
 //        Output result:
-        
+
         System.out.println("Number of chars \"a\" is: " + result);
     }
 }
