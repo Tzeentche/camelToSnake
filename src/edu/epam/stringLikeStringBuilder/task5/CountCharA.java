@@ -10,16 +10,22 @@ public class CountCharA {
 
     public static void main(String[] args) {
 
+//        Create class instance:
+
         CountCharA countCharA = new CountCharA();
         countCharA.usersSentence();
     }
 
     private void usersSentence() {
 
+//        Create scan instance and declare local variable:
+
         Scanner scan = new Scanner(System.in);
         String expression = "";
 
         System.out.println("Please, enter your sentence: ");
+
+//        Catch exceptions:
 
         try {
 
@@ -36,6 +42,8 @@ public class CountCharA {
 
     private void expressionSplitter(String usersExpression) {
 
+//        Split users sentence:
+
         String[] charsArray = usersExpression.split("[^a]+");
 
         charsCounter(charsArray);
@@ -43,12 +51,16 @@ public class CountCharA {
 
     private void charsCounter(String[] splittedSentence) {
 
+//        Declare local variable:
+
         int charsCounter = 0;
 
         for(int counter = 0; counter < splittedSentence.length; counter++) {
 
             Pattern pattern = Pattern.compile("[a]+");
             Matcher match = pattern.matcher(splittedSentence[counter]);
+
+//            Count chars "a":
 
             if(match.find()) {
 
@@ -61,6 +73,8 @@ public class CountCharA {
 
     private void resultOutput(int result) {
 
+//        Output result:
+        
         System.out.println("Number of chars \"a\" is: " + result);
     }
 }
