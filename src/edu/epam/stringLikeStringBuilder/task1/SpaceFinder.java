@@ -62,12 +62,11 @@ public class SpaceFinder {
             System.out.print("Counter is: " + counter + ", This arrayData is: " + arrayData[counter]);
         }
 
-        System.out.println("Number of spaces is: " + spaceCounter);
-
+        outputResult(spaceCounter);
     }
 
-    private void outputResult() {
+    private void outputResult(int result) {
 
-
+        System.out.println("Number of spaces is: " + result);
     }
 }
