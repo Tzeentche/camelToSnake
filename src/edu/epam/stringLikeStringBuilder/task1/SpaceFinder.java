@@ -68,5 +68,6 @@ public class SpaceFinder {
     private void outputResult(int result) {
 
         System.out.println("Number of spaces is: " + result);
+        
     }
 }
