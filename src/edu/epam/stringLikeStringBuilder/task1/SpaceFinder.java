@@ -32,11 +32,9 @@ public class SpaceFinder {
 
 //        [\r\n\t\f\v]+
 //        [A-Za-z]+
-//        [  Text to  count   some spaces    in the  text  ! ,.  ]
+//        [  Text to  count   some spaces     in the  text  ! ,.    ]
 
         String[] charsArray = userString.split("[^ ]+");
-
-        System.out.println("Mid output is: " + charsArray);
 
         spaceCounter(charsArray);
     }
@@ -44,22 +42,15 @@ public class SpaceFinder {
     private void spaceCounter(String[] sentenceWithSpaces) {
 
         int spaceCounter = 0;
-        int[] arrayData = new int[sentenceWithSpaces.length];
 
-        for(int counter = 0; counter < sentenceWithSpaces.length; counter++) {
-            System.out.println(sentenceWithSpaces[counter]);
+        spaceCounter = sentenceWithSpaces[0].length();
 
-            Pattern pattern = Pattern.compile("[ ]+");
-            Matcher match = pattern.matcher(sentenceWithSpaces[counter]);
+        for (int counter = 0; counter < sentenceWithSpaces.length;counter++) {
 
-            if(match.find()) {
+            if (spaceCounter <= sentenceWithSpaces[counter].length()) {
 
-                arrayData[counter] += 1;
-
-                spaceCounter += 1;
+                spaceCounter = sentenceWithSpaces[counter].length();
             }
-
-            System.out.print("Counter is: " + counter + ", This arrayData is: " + arrayData[counter]);
         }
 
         outputResult(spaceCounter);
@@ -67,7 +58,7 @@ public class SpaceFinder {
 
     private void outputResult(int result) {
 
-        System.out.println("Number of spaces is: " + result);
-        
+        System.out.println("Max number of spaces is: " + result);
+
     }
 }
