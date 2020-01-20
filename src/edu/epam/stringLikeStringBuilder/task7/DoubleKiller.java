@@ -17,6 +17,7 @@ public class DoubleKiller {
         String usersString = "";
         Scanner scn = new Scanner(System.in);
 
+        System.out.println("Enter your text: ");
         try {
 
             usersString = scn.nextLine();
@@ -39,10 +40,24 @@ public class DoubleKiller {
 
     private void spaceKiller(String[] messageArray) {
 
+        String someSymbol = "";
+        String result = "";
+
         for(int count = 0; count < messageArray.length; count++) {
 
-            
-        }
-    }
+            System.out.println("Array after splitting: " + messageArray[count]);
 
+//            someSymbol = messageArray[count];
+
+            for (int count2 = 0; count2 < messageArray.length; count2 ++) {
+
+                if(messageArray[count] != messageArray[count2] || messageArray[count] != " ") {
+
+                    result += messageArray[count2];
+                }
+            }
+        }
+
+        System.out.println("Result is: " + result);
+    }
 }
