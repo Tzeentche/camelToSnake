@@ -8,16 +8,23 @@ public class DoubleChar {
 
     public static void main(String[] args) {
 
+//        Create class example:
+
         DoubleChar doubleChar = new DoubleChar();
         doubleChar.insertSentence();
     }
 
     private void insertSentence() {
 
+//        Declare local variables:
+
         String sentence = "";
         Scanner scan = new Scanner(System.in);
 
         System.out.println("Please, enter your sentence: ");
+
+//        Try to catch exceptions:
+
         try {
 
             sentence = scan.nextLine();
@@ -33,12 +40,16 @@ public class DoubleChar {
 
     private void sentenceSplitter(String expression) {
 
+//        Split user's expression:
+
         String[] arrayExpression = expression.split("");
 
     sentenceDoubler(arrayExpression);
     }
 
     private void sentenceDoubler(String[] usersArray) {
+
+//        Declare local variable:
 
         String resultSentense = "";
 
@@ -52,6 +63,8 @@ public class DoubleChar {
 
     public void resultOutput(String resultSentenceIs) {
 
+//        Output result:
+        
         System.out.println("Result sentence is: " + resultSentenceIs);
     }
 }
