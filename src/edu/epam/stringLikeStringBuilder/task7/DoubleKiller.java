@@ -28,36 +28,27 @@ public class DoubleKiller {
             System.out.println("You broke the System!");
         }
 
-        textSplitter(usersString);
+        duplicateKiller(usersString);
     }
 
-    private void textSplitter(String incomingString) {
+    private void duplicateKiller(String messageArray) {
 
-        String[] textArray = incomingString.split("");
+        String mediumExtension = new StringBuilder(messageArray).reverse().toString();
+        mediumExtension = mediumExtension.replaceAll("(.)(?=.*\\1)", "");
+        mediumExtension = new StringBuilder(mediumExtension).reverse().toString();
 
-        spaceKiller(textArray);
+        spaceKiller(mediumExtension);
     }
 
-    private void spaceKiller(String[] messageArray) {
+    private void spaceKiller(String refactoredChars) {
 
-        String someSymbol = "";
-        String result = "";
+        refactoredChars = refactoredChars.replace(" ", "");
 
-        for(int count = 0; count < messageArray.length; count++) {
+        outputResult(refactoredChars);
+    }
 
-            System.out.println("Array after splitting: " + messageArray[count]);
+    private void outputResult(String result) {
 
-//            someSymbol = messageArray[count];
-
-            for (int count2 = 0; count2 < messageArray.length; count2 ++) {
-
-                if(messageArray[count] != messageArray[count2] || messageArray[count] != " ") {
-
-                    result += messageArray[count2];
-                }
-            }
-        }
-
-        System.out.println("Result is: " + result);
+        System.out.println("Result is:" + result);
     }
 }
