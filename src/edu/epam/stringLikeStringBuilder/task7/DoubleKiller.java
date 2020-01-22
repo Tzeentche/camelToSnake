@@ -8,16 +8,23 @@ public class DoubleKiller {
 
     public static void main(String[] args) {
 
+//        Create class example:
+
         DoubleKiller doubleKiller = new DoubleKiller();
         doubleKiller.enterString();
     }
 
     private void enterString() {
 
+//        Declare local variable and scanning user's expression:
+
         String usersString = "";
         Scanner scn = new Scanner(System.in);
 
         System.out.println("Enter your text: ");
+
+//        Try to find exceptions:
+
         try {
 
             usersString = scn.nextLine();
@@ -33,6 +40,8 @@ public class DoubleKiller {
 
     private void duplicateKiller(String messageArray) {
 
+//        Declare local variable and find duplicate chars:
+
         String mediumExtension = new StringBuilder(messageArray).reverse().toString();
         mediumExtension = mediumExtension.replaceAll("(.)(?=.*\\1)", "");
         mediumExtension = new StringBuilder(mediumExtension).reverse().toString();
@@ -42,6 +51,8 @@ public class DoubleKiller {
 
     private void spaceKiller(String refactoredChars) {
 
+//        Kill spaces:
+
         refactoredChars = refactoredChars.replace(" ", "");
 
         outputResult(refactoredChars);
@@ -49,6 +60,8 @@ public class DoubleKiller {
 
     private void outputResult(String result) {
 
+//        Output result:
+        
         System.out.println("Result is:" + result);
     }
 }
