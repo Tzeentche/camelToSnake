@@ -1,6 +1,6 @@
 package edu.epam.stringLikeStringBuilder.task9;
 
-//
+//      Посчитать количество строчных (маленьких) и прописных (больших) букв в введеннйо строке. Учитывать только английские буквы.
 
 import java.util.*;
 import java.util.regex.*;
@@ -35,22 +35,21 @@ public class CharsCounter {
 
     private void textSplitter(String usersText) {
 
-        String[] textArray = new String[usersText.length()];
-        textArray = usersText.split(".");
+        String[] textArray = usersText.split("[.]");
 
         charsCounter(textArray);
     }
 
     private void charsCounter(String[] innerExpression) {
 
-        int lowChars = 0;
-        int highChars = 0;
+        int lowChars = 0, highChars = 0;
 
         for(int counter = 0; counter < innerExpression.length; counter++) {
+
             Pattern lowPattern = Pattern.compile("[a-z]");
             Matcher firstMatch = lowPattern.matcher(innerExpression[counter]);
 
-            if (firstMatch.find()) {
+            while (firstMatch.find()) {
 
                 lowChars += 1;
             }
@@ -58,7 +57,7 @@ public class CharsCounter {
             Pattern highPattern = Pattern.compile("[A-Z]");
             Matcher secondMatch = highPattern.matcher(innerExpression[counter]);
 
-            if (secondMatch.find()) {
+            while (secondMatch.find()) {
 
                 highChars += 1;
             }
