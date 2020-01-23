@@ -64,7 +64,7 @@ public class DoubleChar {
     public void resultOutput(String resultSentenceIs) {
 
 //        Output result:
-        
+
         System.out.println("Result sentence is: " + resultSentenceIs);
     }
 }

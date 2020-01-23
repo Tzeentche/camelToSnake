@@ -61,7 +61,7 @@ public class DoubleKiller {
     private void outputResult(String result) {
 
 //        Output result:
-        
+
         System.out.println("Result is:" + result);
     }
 }
