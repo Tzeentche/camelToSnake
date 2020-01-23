@@ -81,7 +81,7 @@ public class CharsCounter {
     private void resultOutput(int lowChars, int highChars) {
 
 //        Output result:
-        
+
         System.out.println("Count of low case chars is " + lowChars + ", and count of high case is " + highChars);
     }
 }
