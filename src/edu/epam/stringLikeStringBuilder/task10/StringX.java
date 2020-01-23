@@ -9,16 +9,23 @@ public class StringX {
 
     public static void main(String[] args) {
 
+//        Create class example:
+
         StringX stringX = new StringX();
         stringX.usersString();
     }
 
     private void usersString() {
 
+//        Declare local variables:
+
         String innerText = "";
         Scanner scn = new Scanner(System.in);
 
         System.out.println("Please, enter your text with few sentences: ");
+
+//        Try to find exception:
+
         try {
 
             innerText = scn.nextLine();
@@ -34,12 +41,16 @@ public class StringX {
 
     private void stringSplitter(String incomingText) {
 
+//        Split users text:
+
         String[] textArray = incomingText.split("[.+!?]");
 
         sentencesCounter(textArray);
     }
 
     private void sentencesCounter(String[] arraySentences) {
+
+//        Declare local variable and give it value:
 
         int counter = arraySentences.length;
 
@@ -50,6 +61,8 @@ public class StringX {
 
     private void resultOutput(int result) {
 
+//        Output result:
+        
         System.out.println("Yuray!!! We have " + result + " sentences!");
     }
 }
